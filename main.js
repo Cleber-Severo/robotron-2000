@@ -4,20 +4,22 @@ const subtracao = document.querySelector("#subtrair")
 
 const controle = document.querySelectorAll(".controle-ajuste")
 
-console.log(controle);
+controle.forEach((elemento) => {
+
+    elemento.addEventListener('click', (evento) => {
+
+        alteraValor(evento.target.textContent)
+
+    })
+
+})
 
 function alteraValor (operacao) {
 
-    if (operacao === 'subtrair') {
+    if (operacao === '-') {
             braco.value = parseInt(braco.value) - 1
     } else {
             braco.value = parseInt(braco.value)+ 1 
     }
 
 }
-
-soma.addEventListener('click', () => { alteraValor("somar") })
-
-subtracao.addEventListener('click', () => { alteraValor("subtrair") })
-
-
