@@ -4,7 +4,7 @@ controle.forEach((elemento) => {
 
     elemento.addEventListener('click', (evento) => {
 
-        alteraValor(evento.target.textContent, evento.target.parentNode)
+        alteraValor(evento.target.dataset.controle, evento.target.parentNode)
 
     })
 
@@ -12,7 +12,7 @@ controle.forEach((elemento) => {
 
 function alteraValor (operacao, controle) {
 
-    const peca = controle.querySelector(".controle-contador")
+    const peca = controle.querySelector("[data-contador]")
 
 
     if (operacao === '-') {
