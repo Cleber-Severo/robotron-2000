@@ -1,25 +1,24 @@
-const braco = document.querySelector("#braco")
-const soma = document.querySelector("#somar")
-const subtracao = document.querySelector("#subtrair")
-
 const controle = document.querySelectorAll(".controle-ajuste")
 
 controle.forEach((elemento) => {
 
     elemento.addEventListener('click', (evento) => {
 
-        alteraValor(evento.target.textContent)
+        alteraValor(evento.target.textContent, evento.target.parentNode)
 
     })
 
 })
 
-function alteraValor (operacao) {
+function alteraValor (operacao, controle) {
+
+    const peca = controle.querySelector(".controle-contador")
+
 
     if (operacao === '-') {
-            braco.value = parseInt(braco.value) - 1
+            peca.value = parseInt(peca.value) - 1
     } else {
-            braco.value = parseInt(braco.value)+ 1 
+            peca.value = parseInt(peca.value)+ 1 
     }
 
 }
